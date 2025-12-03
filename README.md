@@ -117,6 +117,10 @@ yolo_dataset/
 ---
 
 ## Visualizing Generated Labels
+<p align="center">
+  <img src="assets/visualize_labels.png" width="100%" />
+</p>
+
 ```bash
 python view_dataset.py --data ./yolo_dataset --prompts ./prompts.yaml
 ```
