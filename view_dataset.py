@@ -424,9 +424,8 @@ class YOLOEditor:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--data", default="./yolo_obb_dataset", help="Path to yolo dataset folder")
-    parser.add_argument("--prompts", default=None, help="Path to prompts.yaml")
-    parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
+    parser.add_argument("--data", default="./yolo_dataset", help="Path to yolo dataset folder")
+    parser.add_argument("--prompts", default="./prompts.yaml", help="Path to prompts.yaml")
     args = parser.parse_args()
 
     root = tk.Tk()

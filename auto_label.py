@@ -16,9 +16,6 @@ from sam2.sam2_image_predictor import SAM2ImagePredictor
 # Grounding DINO Imports
 from transformers import AutoProcessor, AutoModelForZeroShotObjectDetection
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../sam2')))
-
-
 def masks_to_yolo_format(masks, img_shape, class_id):
     h, w = img_shape
     yolo_boxes = []
