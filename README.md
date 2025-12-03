@@ -1,4 +1,6 @@
-![alt text](assets/overview.png)
+<p align="center">
+  <img src="assets/overview.png" width="100%" />
+</p>
 
 # Auto-Labeling & YOLO/OBB Dataset Pipeline
 
