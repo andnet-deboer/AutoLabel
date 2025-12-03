@@ -25,7 +25,7 @@ cd segment-anything-2 && pip install -e . && cd ..
 
 # 3. Auto-label your images
 python auto_label.py \
-    --input ./yourdata \
+    --input ./data \
     --output ./yolo_dataset \
     --prompts prompts.yaml \
     --bbox-format yolo \
