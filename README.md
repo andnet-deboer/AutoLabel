@@ -1,3 +1,5 @@
+![alt text](assets/overview.png)
+
 # Auto-Labeling & YOLO/OBB Dataset Pipeline
 
 Automatically generate bounding box or oriented box labels for object detection datasets using **Grounding DINO** and **SAM2**.
