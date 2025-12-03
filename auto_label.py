@@ -92,7 +92,7 @@ def load_prompt_map(yaml_path):
         return yaml.safe_load(f)
 
 def process_dataset(input_dir, output_dir, prompt_config_path, bbox_format,
-                    box_threshold=0.35, device="cuda", split_ratio=0.8):
+                    box_threshold=0.35, device="cuda", split_ratio=0.8, sample_rate=10):
 
     # Setup directories
     subdirs = ['images/train', 'images/val', 'labels/train', 'labels/val']
@@ -134,7 +134,7 @@ def process_dataset(input_dir, output_dir, prompt_config_path, bbox_format,
 
         files = sorted([f for f in os.listdir(rgb_folder)
                         if f.lower().endswith((".jpg", ".png", ".jpeg"))])
-        subset = files[::10]
+        subset = files[::sample_rate]
 
         for fname in subset:
             all_samples.append({
@@ -235,10 +235,12 @@ if __name__ == "__main__":
     parser.add_argument("--prompts", required=True, help="Path to prompts.yaml file")
     parser.add_argument("--bbox-format", choices=["yolo", "obb"], default="yolo",
                         help="Choose bounding box format: 'yolo' or 'obb'")
+    parser.add_argument("--sample-rate", type=int, default=10, help="Process every Nth image (default: 10)")
     parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     args = parser.parse_args()
 
     process_dataset(args.input, args.output,
                     prompt_config_path=args.prompts,
                     bbox_format=args.bbox_format,
+                    skip=args.skip,
                     device=args.device)

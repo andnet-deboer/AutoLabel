@@ -28,7 +28,10 @@ python auto_label.py \
     --input ./yourdata \
     --output ./yolo_dataset \
     --prompts prompts.yaml \
-    --bbox-format yolo
+    --bbox-format yolo \
+    --sample-rate 10 
+
+* Use `--sample-rate N` to process every Nth image (default: 10, use 1 for all images)
 
 # 4. Train YOLOv8
 yolo detect train data=yolo_dataset/dataset.yaml model=yolov8n.pt epochs=100 imgsz=640
