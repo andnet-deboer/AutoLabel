@@ -12,8 +12,8 @@ Automatically generate bounding box or oriented box labels for object detection 
 
 ### Create a virtual environment
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 ```bash
 # 1. Install dependencies

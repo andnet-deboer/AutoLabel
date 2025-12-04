@@ -215,4 +215,6 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-yolo_obb_da*.mcap
+*.mcap
+data/
+
