@@ -22,14 +22,26 @@ pip install -r requirements.txt
 # 2. Clone and install SAM2
 git clone https://github.com/facebookresearch/segment-anything-2.git
 cd segment-anything-2 && pip install -e . && cd ..
-
-# 3. Auto-label your images
+```
+# 3. Auto-label your images for yolo
+```
 python auto_label.py \
-    --input ./data \
+    --input ./output \
     --output ./yolo_dataset \
     --prompts prompts.yaml \
     --bbox-format yolo \
     --sample-rate 10 
+```
+or for yolo obb use
+
+```
+python auto_label.py \
+    --input ./output \
+    --output ./yolo_dataset_obb \
+    --prompts prompts.yaml \
+    --bbox-format obb \
+    --sample-rate 10
+```
 
 * Use `--sample-rate N` to process every Nth image (default: 10, use 1 for all images)
 

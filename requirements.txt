@@ -3,7 +3,7 @@ torch>=2.0
 torchvision>=0.15
 
 # Image Processing
-numpy>=1.25
+numpy<2
 opencv-python>=4.8
 Pillow>=10.0
 
@@ -25,3 +25,7 @@ tqdm>=4.66.1
 
 # yolo training
 ultralytics
+
+mcap-ros2-support
+
+torch --index-url https://download.pytorch.org/whl/cu124

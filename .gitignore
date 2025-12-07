@@ -218,3 +218,7 @@ __marimo__/
 *.mcap
 data/
 
+segment-anything-2/
+output/
+yolo_dataset/
+yolo_dataset_obb/
